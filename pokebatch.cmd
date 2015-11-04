@@ -1,8 +1,8 @@
 @echo off
 title POKEBATCH
-echo \---------------------------------------------------\
-echo  \    PokeBatch - The Pokemon experience in Batch    \
-echo   \---------------------------------------------------\
+echo ^\---------------------------------------------------^\
+echo  ^\    PokeBatch - The Pokemon experience in Batch    ^\
+echo   ^\---------------------------------------------------^\
 pause
 
 
@@ -15,6 +15,7 @@ echo reveal something about yourself.
 pause
 echo.
 set /p gender=Are you a boy or a girl?: %=%
+
 if (%gender%)==(boy) set gender=boy
 if (%gender%)==(girl) set gender=girl
 if (%gender%)==(Boy) set gender=boy
@@ -23,6 +24,7 @@ if (%gender%)==(male) set gender=boy
 if (%gender%)==(female) set gender=girl
 if (%gender%)==(Male) set gender=boy
 if (%gender%)==(Female) set gender=girl
+REM I WASNT INVOLVED IN THIS. SJW PLZ NO DOX. - Phexion
 if (%gender%)==(bisexual) set gender=bisex
 if (%gender%)==(gay boy) set gender=gb
 if (%gender%)==(gay girl) set gender=gg
