@@ -1,12 +1,14 @@
 echo off
 
+
 if (%pokemode%)==(starter) goto CHOOSING
+
 
 
 :CHOOSING
 echo.
-call bulbasaur_graphics.cmd
+call squirtle_graphics.cmd
 echo.
-echo      Name: Bulbasuar
-echo      Type: Grass
+echo      Name: Squirtle
+echo      Type: Water
 echo      Lvl: %starter_lvl%

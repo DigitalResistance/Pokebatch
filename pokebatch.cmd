@@ -141,13 +141,13 @@ goto CHOOSE_POKEMON
 :REDONAME
 cls
 echo Prof. Oak approaches
-echo Press any key to continue...
+echo Press any key to continue . . .
 echo.
 echo Prof. Oak: Hi. My name is Proffessor Oak.
-echo Press any key to continue...
+echo Press any key to continue . . .
 echo.
 echo Prof. Oak: Welcome to the wonderful world of Pokemon!
-echo Press any key to continue...
+echo Press any key to continue . . .
 echo.
 set /p name=Prof. Oak: It seems I don't remember your name. What is it?: %=%
 if (%name%)==() goto REDONAME
@@ -195,7 +195,7 @@ if (%starterno%)==(4) goto CHOOSING_PIKACHU
 cls
 
 set pokemode=starter
-call pokebatch_bulbasaur
+call resources/pokemon/bulbasaur
 
 echo Prof. Oak: Do you want to pick Bulbasaur?
 set /p choosing_pokemon=Y/N: %=%
@@ -214,7 +214,7 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-call pokebatch_squirtle
+call resources/pokemon/squirtle
 
 echo Prof. Oak: Do you want to pick Squirtle?
 set /p choosing_pokemon=Y/N: %=%
@@ -233,7 +233,7 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-call pokebatch_charmander
+call resources/pokemon/charmander
 
 echo Prof. Oak: Do you want to pick Charmander?
 set /p choosing_pokemon=Y/N: %=%
@@ -252,7 +252,7 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-call pokebatch_pikachu
+call resources/pokemon/pikachu
 
 echo Prof. Oak: Do you want to pick Pikachu?
 echo Be careful this pokemon is very energetic.
