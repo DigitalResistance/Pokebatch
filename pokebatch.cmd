@@ -24,7 +24,11 @@ if (%gender%)==(male) set gender=boy
 if (%gender%)==(female) set gender=girl
 if (%gender%)==(Male) set gender=boy
 if (%gender%)==(Female) set gender=girl
-REM I WASNT INVOLVED IN THIS. SJW PLZ NO DOX. - Phexion
+
+::I WASNT INVOLVED IN THIS. SJW PLZ NO DOX.
+::... It's just an easter egg...
+::If you have an major issue with it, tell me
+
 if (%gender%)==(bisexual) set gender=bisex
 if (%gender%)==(gay boy) set gender=gb
 if (%gender%)==(gay girl) set gender=gg
@@ -35,6 +39,11 @@ if (%gender%)==(boy) set gender_rel_parent=son
 if (%gender%)==(girl) set gender_rel_parent=daughter
 if (%gender%)==(gb) set gender_rel_parent=son
 if (%gender%)==(gg) set gender_rel_parent=daughter
+
+if (%gender%)==(boy) set gender_rel=him
+if (%gender%)==(girl) set gender_rel=her
+if (%gender%)==(gb) set gender_rel=him
+if (%gender%)==(gg) set gender_rel=her
 
 if (%gender%)==(boy) goto INTRO
 if (%gender%)==(girl) goto INTRO
@@ -82,6 +91,11 @@ if (%gender%)==(girl) set gender_rel_parent=daughter
 if (%gender%)==(gb) set gender_rel_parent=son
 if (%gender%)==(gg) set gender_rel_parent=daughter
 
+if (%gender%)==(boy) set gender_rel=him
+if (%gender%)==(girl) set gender_rel=her
+if (%gender%)==(gb) set gender_rel=him
+if (%gender%)==(gg) set gender_rel=her
+
 if (%gender%)==(boy) goto INTRO
 if (%gender%)==(girl) goto INTRO
 if (%gender%)==(bisex) (
@@ -108,7 +122,7 @@ cls
 echo Prof. Oak approaches
 pause
 echo.
-echo Prof. Oak: Hi. My name is Prof. Oak.
+echo Prof. Oak: Hi. My name is Professor Oak.
 pause
 echo.
 echo Prof. Oak: Welcome to the wonderful world of Pokemon!
@@ -143,7 +157,7 @@ cls
 echo Prof. Oak approaches
 echo Press any key to continue . . .
 echo.
-echo Prof. Oak: Hi. My name is Proffessor Oak.
+echo Prof. Oak: Hi. My name is Professor Oak.
 echo Press any key to continue . . .
 echo.
 echo Prof. Oak: Welcome to the wonderful world of Pokemon!
@@ -279,6 +293,13 @@ if (%starterno%)==(4) call resources/pokemon/pikachu
 
 cls
 echo Prof. Oak: Congratulations! From here on you are now a pokemon trainer!
+pause
+echo.
+echo %starter%: %starter_call_1%
+pause
+echo.
+echo Prof. Oak: Oh! Yes %starter%! %name%, %starter% would like to know what you
+echp would like to call %gender_rel%
 echo Here, take this with you.
 echo [%name% obtained the pokegear!]
 echo Prof. Oak: This will help you along the way.
