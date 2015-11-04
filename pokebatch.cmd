@@ -139,13 +139,13 @@ goto CHOOSE_POKEMON
 :REDONAME
 cls
 echo Prof. Oak approaches
-echo Press any key to continue...
+echo Press any key to continue . . .
 echo.
 echo Prof. Oak: Hi. My name is Proffessor Oak.
-echo Press any key to continue...
+echo Press any key to continue . . .
 echo.
 echo Prof. Oak: Welcome to the wonderful world of Pokemon!
-echo Press any key to continue...
+echo Press any key to continue . . .
 echo.
 set /p name=Prof. Oak: It seems I don't remember your name. What is it?: %=%
 if (%name%)==() goto REDONAME
