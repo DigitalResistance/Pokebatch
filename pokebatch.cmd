@@ -194,7 +194,7 @@ if (%starterno%)==(4) goto CHOOSING_PIKACHU
 :CHOOSING_BULBASAUR
 cls
 
-set pokemode=starter
+set mode=starter
 call resources/pokemon/bulbasaur
 
 echo Prof. Oak: Do you want to pick Bulbasaur?
@@ -213,7 +213,7 @@ goto CHOOSING
 :CHOOSING_SQUIRTLE
 cls
 
-set pokemode=starter
+set mode=starter
 call resources/pokemon/squirtle
 
 echo Prof. Oak: Do you want to pick Squirtle?
@@ -232,7 +232,7 @@ goto CHOOSING
 :CHOOSING_CHARMANDER
 cls
 
-set pokemode=starter
+set mode=starter
 call resources/pokemon/charmander
 
 echo Prof. Oak: Do you want to pick Charmander?
@@ -251,7 +251,7 @@ goto CHOOSING
 :CHOOSING_PIKACHU
 cls
 
-set pokemode=starter
+set mode=starter
 call resources/pokemon/pikachu
 
 echo Prof. Oak: Do you want to pick Pikachu?
@@ -271,6 +271,12 @@ goto CHOOSING
 
 
 :CHOSEN
+set mode=init
+if (%starterno%)==(1) call resources/pokemon/bulbasaur
+if (%starterno%)==(2) call resources/pokemon/charmander
+if (%starterno%)==(3) call resources/pokemon/squirtle
+if (%starterno%)==(4) call resources/pokemon/pikachu
+
 cls
 echo Prof. Oak: Congratulations! From here on you are now a pokemon trainer!
 echo Here, take this with you.
@@ -313,7 +319,6 @@ goto EASTER_RETURN_BISEX_1
 :START
 
 call resources/start_declare.cmd
-::devupto
 
 
 ::Maribou town
