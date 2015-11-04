@@ -279,14 +279,7 @@ echo Prof. Oak: This will help you along the way.
 pause
 
 cls
-
-set badge_total=0
-set mom_event=0
-set stone_fire=0
-set wing_rainbow=0
-set league_level=0
-
-title POKEBATCH - %names%'s journey with %starter% - %badge_total%
+title POKEBATCH - %names%'s journey with %starter% - 0
 
 echo Prof. Oak: Now your journey begins with %starter%
 echo Prof. Oak: Collect gym badges and compete in the Pokemon League.
@@ -299,7 +292,6 @@ goto START
 
 
 
-::Only editted up to here
 ::Easter eggs (move to EOF (or separate file) when possible)
 
 :EASTER_ASH
@@ -319,13 +311,9 @@ goto EASTER_RETURN_BISEX_1
 
 
 :START
-::set starter-lvl=4
-::set starter-hp=20
-::set starter-att=2
-::set starter-def=2
-::set starter-spd=2
-::set starter-spatt=2
-::set starter-spdef=2
+
+call resources/start_declare.cmd
+::devupto
 
 
 ::Maribou town
