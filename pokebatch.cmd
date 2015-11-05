@@ -568,50 +568,52 @@ echo Something is inside the grass
 setlocal ENABLEDELAYEDEXPANSION
 set /a r=%random% %%!3 +1
 ::Caterpie Oddish Rattata Cubone
+
+set mode=versus_wild
+set location=route1
+
 if '%r%' == '0' (
-    set wildpkmn=Caterpie
+    set pokemon_wild=caterpie
     goto wildpokemon
 )
 if '%r%' == '1' (
-    set wildpkmn=Oddish
+    set pokemon_wild=oddish
     goto wildpokemon
 )
 if '%r%' == '2' (
-    set wildpkmn=Rattata
+    set pokemon_wild=rattata
     goto wildpokemon
 )
 if '%r%' == '3' (
-    set wildpkmn=Cubone
+    set pokemon_wild=cubone
     goto wildpokemon
 )
 :wildpokemon
-echo A wild %wildpkmn% has appeared
+echo A wild %pokemon_wild% has appeared
 echo.
-echo %wildpkmn%: %wildpkmn%
-set wildpkmn-lvl=2
-set wildpkmn-hp=10
-set wildpkmn-hp=20
-set wildpkmn-att=2
-set wildpkmn-def=2
-set wildpkmn-spd=2
-set wildpkmn-spatt=2
-set wildpkmn-spdef=2
+echo %pokemon_wild%: %pokemon_wild_call_1%
 echo.
 echo %name%: Go %starter% I choose you!
-echo %starter%: %starter%
+echo %starter%: %starter_call_1%!
 pause
 
 :wildpokemon-battle
 cls
-echo \---------------------------------------------------\
-echo  \                 %wildpkmn% (Lvl %wildpkmn-lvl%)                \
+
+set mode=versus_wild_graphics
+if (%pokemon_wild%)==(caterpie) call resources/pokemon/caterpie.cmd
+if (%pokemon_wild%)==(oddish) call resources/pokemon/oddish.cmd
+if (%pokemon_wild%)==(rattata) call resources/pokemon/rattata.cmd
+if (%pokemon_wild%)==(cubone) call resources/pokemon/cubone.cmd
+
+echo  \                 %pokemon_wild% (Lvl %pokemon_wild%)                \
 echo   \---------------------------------------------------\
 echo.
 echo HP: %wildpkmn-hp%
 echo.
 echo.
 echo \---------------------------------------------------\
-echo  \                 %starter% (Lvl %starter-lvl%)                \
+echo  \                 %starter% (Lvl %starter_level%)                \
 echo   \---------------------------------------------------\
 echo.
 echo HP: %starter-hp%
