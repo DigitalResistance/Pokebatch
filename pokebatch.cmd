@@ -295,20 +295,62 @@ cls
 echo Prof. Oak: Congratulations! From here on you are now a pokemon trainer!
 pause
 echo.
-echo %starter%: %starter_call_1%
+echo Here, take this with you.
 pause
 echo.
-echo Prof. Oak: Oh! Yes %starter%! %name%, %starter% would like to know what you
-echp would like to call %gender_rel%
-echo Here, take this with you.
 echo [%name% obtained the pokegear!]
+echo.
+pause
+echo.
 echo Prof. Oak: This will help you along the way.
 pause
+echo.
 
+
+::naming
+echo %starter_name%: %starter_call_1% %starter_call_1% %starter_call_2%!
+pause
+echo.
+echo Prof. Oak: Oh! Yes %starter_name%! %name%, %starter_name% would like to know what you
+echo would like to call %gender_rel%.
+pause
+echo.
+set /p starter_name=Prof. Oak: What do you want to call %starter_name%?: %=%
+if (%starter_name%)==() goto NAMING_REDO
+goto CONT_1
+
+:NAMING_REDO
 cls
-title POKEBATCH - %names%'s journey with %starter% - 0
+echo Prof. Oak: Congratulations! From here on you are now a pokemon trainer!
+echo Press any key to continue . . .
+echo.
+echo Here, take this with you.
+echo Press any key to continue . . .
+echo.
+echo [%name% obtained the pokegear!]
+echo.
+echo Press any key to continue . . .
+echo.
+echo Prof. Oak: This will help you along the way.
+echo Press any key to continue . . .
+echo.
+echo %starter_name%: %starter_call_1% %starter_call_1% %starter_call_2%!
+echo Press any key to continue . . .
+echo.
+echo Prof. Oak: Oh! Yes %starter_name%! %name%, %starter_name% would like to know what you
+echo would like to call %gender_rel%.
+echo Press any key to continue . . .
+echo.
+set /p starter_name=Prof. Oak: What do you want to call %starter_name%?: %=%
+if (%starter_name%)==() goto NAMING_REDO
+goto CONT_1
 
-echo Prof. Oak: Now your journey begins with %starter%
+
+:CONT_1
+cls
+title POKEBATCH - %names%'s journey with %starter_name% - 0
+
+echo Prof. Oak: Now your journey begins with %starter_name%
 echo Prof. Oak: Collect gym badges and compete in the Pokemon League.
 echo Prof. Oak: Good luck!
 pause
@@ -457,7 +499,7 @@ if '%mom%' == '6' (
 cls
 echo You ate lots of delicious food.. OM NOM NOM NOM
 echo You are feeling sleepy. What was in the food?!
-echo You wake up 12 hours later. Your %starter% has recovered his HP.
+echo You wake up 12 hours later. %starter_name% has recovered his HP.
 set /a starter-hp=10*%starter-lvl%
 pause
 goto :city1-1
@@ -493,11 +535,15 @@ if '%city1-2option%' == '3' goto city1
 cls
 echo Nurse Joy: My my, your %starter% doesn't look very good
 echo Nurse Joy: Here let me fix him with my love!
-echo Your %starter% is blushed red
-echo Nurse Joy: Here you go better than ever.
-echo %starter%: %STARTER%!
-echo Your %starter% has recovered his HP.
-set /a starter-hp=10*%starter-lvl%
+pause
+echo.
+echo %starter_name% blushed
+echo.
+echo Nurse Joy: Here you go! Better than ever.
+pause
+echo.
+echo %starter_name%: %starter_call_3%!
+set /a starter_hp=%starter_max_hp%
 pause
 goto city1-2
 
@@ -544,7 +590,7 @@ if '%city1-2option%' == '2' goto city1
 :city1-3-1
 cls
 echo Prof Oak: Oh hi %name% I am a little busy right now.
-echo Prof Oak: Come back after you've won a gym batch.
+echo Prof Oak: Come back later.
 pause
 goto city1
 
@@ -572,19 +618,19 @@ set /a r=%random% %%!3 +1
 set mode=versus_wild
 set location=route1
 
-if '%r%' == '0' (
+if (%r%)==(0) (
     set pokemon_wild=caterpie
     goto wildpokemon
 )
-if '%r%' == '1' (
+if (%r%)==(1) (
     set pokemon_wild=oddish
     goto wildpokemon
 )
-if '%r%' == '2' (
+if (%r%)==(2) (
     set pokemon_wild=rattata
     goto wildpokemon
 )
-if '%r%' == '3' (
+if (%r%)==(3) (
     set pokemon_wild=cubone
     goto wildpokemon
 )
@@ -593,8 +639,8 @@ echo A wild %pokemon_wild% has appeared
 echo.
 echo %pokemon_wild%: %pokemon_wild_call_1%
 echo.
-echo %name%: Go %starter% I choose you!
-echo %starter%: %starter_call_1%!
+echo %name%: Go %starter_name% I choose you!
+echo %starter_name%: %starter_call_1%!
 pause
 
 :wildpokemon-battle
@@ -613,7 +659,7 @@ echo HP: %wildpkmn-hp%
 echo.
 echo.
 echo \---------------------------------------------------\
-echo  \                 %starter% (Lvl %starter_level%)                \
+echo  \                 %starter_name% (Lvl %starter_level%)                \
 echo   \---------------------------------------------------\
 echo.
 echo HP: %starter-hp%
@@ -654,7 +700,7 @@ echo.
 if %wildpkmn-hp% <=0 goto wild-1-victory
 
 echo \---------------------------------------------------\
-echo  \                 %starter% (Lvl %starter-lvl%)                \
+echo  \                 %starter_name% (Lvl %starter-lvl%)                \
 echo   \---------------------------------------------------\
 echo.
 echo HP: %starter-hp%
@@ -668,10 +714,10 @@ if '%wildpkmn-hit%' == '0' set impact-starter=((2*%starter-att%)/2)*(%critical%+
 if '%wildpkmn-hit%' == '1' set impact-starter=((3*%starter-att%)/2)*(%critical%+1)
 set starter-hp=%starter-hp%-(%impact-starter%-%starter-def%)
 
-if '%critical%' == '0' echo %starter% lost %impact-starter% HP
+if '%critical%' == '0' echo %starter_name% lost %impact-starter% HP
 if '%critical%' == '1' (
     echo Critical Hit!
-    echo %starter% lost %impact-starter% HP
+    echo %starter_name% lost %impact-starter% HP
 )
 
 echo HP: %starter-hp%
@@ -692,7 +738,7 @@ echo HP: 0
 echo.
 echo.
 echo \---------------------------------------------------\
-echo  \                 %starter% (Lvl %starter-lvl%)                \
+echo  \                 %starter_name% (Lvl %starter-lvl%)                \
 echo   \---------------------------------------------------\
 echo.
 echo HP: %starter-hp%
@@ -700,7 +746,7 @@ echo.
 echo.
 echo %wildpkmn% has fainted
 echo.
-echo %starter% gained 100 experience points
+echo %starter_name% gained 100 experience points
 set /a starter-lvl=%starter-lvl%+1
 set /a starter-hp=10*%starter-lvl%
 set /a starter-att=%starter-att%+1
@@ -709,13 +755,13 @@ set /a starter-spd=10*%starter-spd%+1
 set /a starter-spatt=10*%starter-spatt%+1
 set /a starter-spdef=10*%starter-spdef%+1
 
-echo %starter% reached Level %starter-lvl%
-echo %starter%'s HP increased to %starter-hp%
-echo %starter%'s Attack increased to %starter-att%
-echo %starter%'s Defense increased to %starter-def%
-echo %starter%'s Speed increased to %starter-spd%
-echo %starter%'s Sp.Attack increased to %starter-spatt%
-echo %starter%'s Sp.Defense increased to %starter-spdef%
+echo %starter_name% reached Level %starter-lvl%
+echo %starter_name%'s HP increased to %starter-hp%
+echo %starter_name%'s Attack increased to %starter-att%
+echo %starter_name%'s Defense increased to %starter-def%
+echo %starter_name%'s Speed increased to %starter-spd%
+echo %starter_name%'s Sp.Attack increased to %starter-spatt%
+echo %starter_name%'s Sp.Defense increased to %starter-spdef%
 pause
 goto city-2
 
@@ -729,13 +775,13 @@ echo HP: %wildpkmn-hp%
 echo.
 echo.
 echo \---------------------------------------------------\
-echo  \                 %starter% (Lvl %starter-lvl%)                \
+echo  \                 %starter_name% (Lvl %starter-lvl%)                \
 echo   \---------------------------------------------------\
 echo.
 echo HP: 0
 echo.
 echo.
-echo %starter% has fainted
+echo %starter_name% has fainted
 echo You don't have any more Pokemon
 echo %name% runs away to Maribou town to his home.
 goto start
