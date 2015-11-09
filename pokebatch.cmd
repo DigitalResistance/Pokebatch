@@ -193,8 +193,7 @@ if (%starterno%)==(4) goto CHOOSING_PIKACHU
 cls
 
 set pokemode=starter
-cd resources/pokemon && call bulbasaur.cmd
-cd ..\..\
+call resources/pokemon/bulbasaur
 
 echo Prof. Oak: Do you want to pick Bulbasaur?
 set /p choosing_pokemon=Y/N: %=%
@@ -213,8 +212,7 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-cd resources/pokemon && call squirtle.cmd
-cd ..\..\
+call resources/pokemon/squirtle
 
 echo Prof. Oak: Do you want to pick Squirtle?
 set /p choosing_pokemon=Y/N: %=%
@@ -233,8 +231,7 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-cd resources/pokemon && call charmander.cmd
-cd ..\..\
+call resources/pokemon/charmander
 
 echo Prof. Oak: Do you want to pick Charmander?
 set /p choosing_pokemon=Y/N: %=%
@@ -253,8 +250,7 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-cd resources/pokemon && call pikachu.cmd
-cd ..\..\
+call resources/pokemon/pikachu
 
 echo Prof. Oak: Do you want to pick Pikachu?
 echo Be careful this pokemon is very energetic.
