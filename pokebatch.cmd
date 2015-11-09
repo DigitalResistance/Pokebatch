@@ -193,7 +193,23 @@ if (%starterno%)==(4) goto CHOOSING_PIKACHU
 cls
 
 set pokemode=starter
-call resources/pokemon/bulbasaur
+echo.
+echo                |\/|^__
+echo           ____~~~    \  \
+echo	      /    ^ /   \  \   \
+echo	     /\-------/ \     \  \  
+echo      /         _  \     |  |               
+echo     | /|      /|\  |    /  /             
+echo    / /__     |_|_| |   /   |       
+echo   |     ______     /\ / __/     
+echo    \   /-_____|  _| -\-/           
+echo     \-__    _~~/ /___ \__               
+echo        |\~~~/   |    /|  |           
+echo        |    \___/   /  \  \ 
+echo.
+echo      Name: Bulbasuar
+echo      Type: Grass
+echo      Lvl: %starter_lvl%
 
 echo Prof. Oak: Do you want to pick Bulbasaur?
 set /p choosing_pokemon=Y/N: %=%
@@ -212,12 +228,26 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-call resources/pokemon/squirtle
+echo.
+echo               ______
+echo              / ,  , \
+echo             |        |
+echo              \______/
+echo           _ _|______|_ _
+echo          / | |      | | \
+echo         | || |      | || |
+echo         |_|| |      | ||_|
+echo             |_\____/_|
+echo              | |  | |
+echo              |_|  |_|
+echo.
+echo      Name: Squirtle
+echo      Type: Water
+echo      Lvl: %starter_lvl%
 
 echo Prof. Oak: Do you want to pick Squirtle?
 set /p choosing_pokemon=Y/N: %=%
 if (%choosing_pokemon%)==(Y) set choosing_pokemon=y
-if (%choosing_pokemon%)==(y) set choosing_pokemon=y
 if (%choosing_pokemon%)==(Yes) set choosing_pokemon=y
 if (%choosing_pokemon%)==(yes) set choosing_pokemon=y
 if (%choosing_pokemon%)==(y) (
@@ -231,12 +261,26 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-call resources/pokemon/charmander
+echo.
+echo                               ___.
+echo                          ____l___ll
+echo      ll_____ll         _l_____ l___l
+echo      l       l_     __l____l________l
+echo     l  @   @   l___l___l____________l__
+echo     l    _                             l
+echo      l                                  l
+echo       l                                _l
+echo        l_      ______________      ___l
+echo          l    l              l    l
+echo          l____l               l___l
+echo.
+echo      Name: Charmander
+echo      Type: Fire
+echo      Lvl: %starter_lvl%
 
 echo Prof. Oak: Do you want to pick Charmander?
 set /p choosing_pokemon=Y/N: %=%
 if (%choosing_pokemon%)==(Y) set choosing_pokemon=y
-if (%choosing_pokemon%)==(y) set choosing_pokemon=y
 if (%choosing_pokemon%)==(Yes) set choosing_pokemon=y
 if (%choosing_pokemon%)==(yes) set choosing_pokemon=y
 if (%choosing_pokemon%)==(y) (
@@ -250,13 +294,30 @@ goto CHOOSING
 cls
 
 set pokemode=starter
-call resources/pokemon/pikachu
+echo.
+call pikachu_graphics.cmd
+echo.
+echo            |\________/|
+echo            |  >    <  |
+echo            |()  __  ()|
+echo            |__________|
+echo           _ /        \ _
+echo          / |          | \
+echo         | ||          || |
+echo         |_||          ||_|
+echo             \________/
+echo              | |  | |
+echo              |_|  |_|
+echo.
+echo      Name: Pikachu
+echo      Type: Electric
+echo      Lvl: %starter_lvl%
+
 
 echo Prof. Oak: Do you want to pick Pikachu?
 echo Be careful this pokemon is very energetic.
 set /p choosing_pokemon=Y/N: %=%
 if (%choosing_pokemon%)==(Y) set choosing_pokemon=y
-if (%choosing_pokemon%)==(y) set choosing_pokemon=y
 if (%choosing_pokemon%)==(Yes) set choosing_pokemon=y
 if (%choosing_pokemon%)==(yes) set choosing_pokemon=y
 if (%choosing_pokemon%)==(y) (
