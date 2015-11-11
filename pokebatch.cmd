@@ -1,4 +1,6 @@
 @echo off
+REM SET IT AS FULLSCREEN
+MODE CON COLS=999 LINES=999
 title POKEBATCH
 echo \---------------------------------------------------\
 echo  \    PokeBatch - The Pokemon experience in Batch    \
