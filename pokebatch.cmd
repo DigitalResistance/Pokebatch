@@ -1,5 +1,5 @@
 @echo off
-REM SET IT AS FULLSCREEN
+:: SET IT AS FULLSCREEN
 MODE CON COLS=999 LINES=999
 title POKEBATCH
 echo \---------------------------------------------------\
@@ -129,7 +129,7 @@ echo.
 echo %name%: I'm not sure
 pause
 echo.
-echo Prof. Oak: That's fine! I can allready tell that you'll make a
+echo Prof. Oak: That's fine! I can already tell that you'll make a
 echo great pokemon trainer!
 pause
 
@@ -164,7 +164,7 @@ echo.
 echo %name%: I'm not sure
 pause
 echo.
-echo Prof. Oak: That's fine! I can allready tell that you'll make a
+echo Prof. Oak: That's fine! I can already tell that you'll make a
 echo great pokemon trainer!
 pause
 
