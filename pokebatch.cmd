@@ -1,8 +1,12 @@
 @echo off
 title POKEBATCH
-echo \---------------------------------------------------\
-echo  \    PokeBatch - The Pokemon experience in Batch    \
-echo   \---------------------------------------------------\
+echo.
+echo   _____      _____      _    _
+echo  |  _  |    /  _  \    | |  / /
+echo  | |_| |   |  | |  |   | | / /
+echo  |  ___|   |  | |  |   | |/ /
+echo  | |       |  |_|  |   | | \ \
+echo  |_|        \_____/    |_|  \_\
 pause
 
 
